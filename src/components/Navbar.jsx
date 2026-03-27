@@ -14,7 +14,7 @@ const Navbar = () => {
 
         <div className='text-4xl font-bold bg-gradient-to-r from-blue-500 via-indigo-500 to-green-500 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient tracking-tighter'>
           <span>Good</span>
-          <span className='absolute text-black left-29'>Food</span> 
+          <span className='absolute text-black left-22 sm:left-29'>Food</span> 
         </div>
         <div className='hidden sm:block'>
           <ul className='text-white flex items-center space-x-5 text-xl'>

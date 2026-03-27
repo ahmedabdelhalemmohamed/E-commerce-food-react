@@ -1,7 +1,11 @@
 import React from 'react'
 
-export const Hero = () => {
+const Hero = () => {
   return (
-    <div>Hero</div>
+    <div className='bg-[url("./hero2.png")] bg-cover h-[50vh] sm:h-screen relative'>
+        
+    </div>
   )
 }
+
+export default Hero
