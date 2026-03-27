@@ -4,7 +4,9 @@ import Navbar from '../components/Navbar'
 const Home = () => {
   return (
     <div>
-        <Navbar />
+        <div className='sticky top-0 left-0 w-full'>
+          <Navbar />
+        </div>
     </div>
   )
 }
