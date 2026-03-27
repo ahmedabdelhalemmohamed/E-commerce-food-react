@@ -2,14 +2,23 @@ import React from 'react'
 import Home from './pages/Home'
 import { Router, Route, Routes } from 'react-router-dom'
 import Shopping from './pages/Shopping'
+import supabase from './supabase'
+import Navbar from './components/Navbar'
+import Foods from './pages/Foods'
 
 const App = () => {
+
+  console.log(supabase)
+
   return (
-    <div className='min-h-[200vh]'>
-      <Home />
+    <div className='min-h-screen'>
+      <div className='sticky top-0 left-0 w-full z-50'>
+          <Navbar />
+      </div>
       <Routes>
-        <Route path="/"/>
+        <Route path="/" element={<Home />}/>
         <Route path="/shopping" element={<Shopping />}/>
+        <Route path="/foods" element={<Foods />}/>
       </Routes>
     </div>
   )
