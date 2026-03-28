@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className='min-h-screen'>
-      <div className='sticky top-0 left-0 w-full z-50'>
+      <div className='sticky top-0 left-0 w-full z-70'>
           <Navbar />
       </div>
       <Routes>

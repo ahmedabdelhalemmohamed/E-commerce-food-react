@@ -3,6 +3,7 @@
 @theme {
   --animate-gradient: gradient 2s ease-in-out infinite;
   --animate-menu: menu 1s ease-in-out;
+  --animate-card: card 2s ease-in-out infinite;
 }
 
 @keyframes gradient {
@@ -21,5 +22,17 @@
   100% {
     transform: translateX(0);
   }
+}
+
+@keyframes card{
+  0%, 100% {
+    transform: translateY(-5%);
+  } 
+  50% {
+    transform: translateY(0)
+  } 
+  /* 100% {
+    transform: translateY(10%);
+  } */
 }
 
