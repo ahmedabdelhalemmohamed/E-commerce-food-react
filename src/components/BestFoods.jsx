@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { IoIosClose } from "react-icons/io";
 
 const BestFoods = () => {
   const [famousFood, setFamousFood] = useState([
@@ -7,29 +8,31 @@ const BestFoods = () => {
       name: "Pizza Italian",
       img: "./foods/pizza.jpg",
       des: "The best Italian pizza",
-      price: "5$"
+      price: "5$",
     },
     {
       name: "Pizza Italian",
       img: "./foods/pizza.jpg",
       des: "The best Italian pizza",
-      price: "5$"
+      price: "5$",
     },
     {
       name: "Pizza Italian",
       img: "./foods/pizza.jpg",
       des: "The best Italian pizza",
-      price: "5$"
+      price: "5$",
     },
   ]);
+
+  const [product, setProduct] = useState(false);
 
   return (
     <div className="mx-auto text-center overflow-hidden lg:px-50 px-10 mb-20">
       <div className="text-center mt-10 max-w-full mx-auto">
-          <h1 className="text-4xl font-bold text-green-500">Best Foods</h1>
-          <p className=" text-xl sm:text-2xl text-green-300">
-            The most famous and best-selling foods
-          </p>
+        <h1 className="text-4xl font-bold text-green-500">Best Foods</h1>
+        <p className=" text-xl sm:text-2xl text-green-300">
+          The most famous and best-selling foods
+        </p>
       </div>
       <div className="flex flex-col sm:flex-row items-center sm:items-start flex-wrap sm:flex-nowrap lg:justify-around sm:justify-between gap-5 mt-20  ">
         {famousFood.map((food, index) => {
@@ -56,7 +59,10 @@ const BestFoods = () => {
                   {food.price}
                 </div>
               </div>
-              <button className="mt-5 py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit ">
+              <button
+                onClick={() => setProduct(!product)}
+                className="mt-5 py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit "
+              >
                 Add to Cart
               </button>
             </div>
@@ -67,6 +73,48 @@ const BestFoods = () => {
       <button className="mx-auto mt-5 py-3 px-6 bg-white text-green-500 rounded-full hover:text-white font-bold border-2 border-green-500 hover:bg-green-500 hover:text-black transition cursor-pointer w-fit ">
         <Link to="/foods">Discover More Foods</Link>
       </button>
+      {product && (
+        <div className="z-100 fixed top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-fit  bg-green-300 flex items-center rounded-2xl">
+          <div
+            className={`w-75 h-auto border-r-2 border-green-500  p-5 space-y-2  transition-all`}
+          >
+            <div className="w-full h-50">
+              <img
+                src="./foods/pizza.jpg"
+                alt=""
+                className="w-full h-full rounded-2xl"
+              />
+            </div>
+            <div className="text-center">
+              <div>
+                <h1 className="text-xl font-bold text-green-500">
+                  Pizza Italian
+                </h1>
+                <p className="font-medium">The best Italian pizza</p>
+              </div>
+              <div className="bg-green-500 rounded-full w-10 mx-auto mt-2 text-white">
+                5$
+              </div>
+            </div>
+            <button
+              onClick={() => setProduct(!product)}
+              className="mt-5 py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit "
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div className="p-2">
+            <div className="absolute top-3 right-3 cursor-pointer">
+              <IoIosClose size={30} onClick={() => setProduct((prev) => !prev)}/>
+            </div>
+            
+            <div>
+              <p className="font-bold mb-2">Amount:</p>
+              <input type="number" min={1} className="text-center border-2 border-white p-2 w-15 outline-none text-red-500 font-bold"/>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
