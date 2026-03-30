@@ -71,6 +71,54 @@ const products = [
         image: "./foods/fastFood/penne/penne2.jpg",
         category: "Italian"
     },
+    {
+        name: "Fettuccine",
+        price: 5,
+        image: "./foods/fastFood/fettuccine/fettuccine1.jpg",
+        category: "Italian"
+    },
+    {
+        name: "Fettuccine",
+        price: 6,
+        image: "./foods/fastFood/fettuccine/fettuccine2.jpg",
+        category: "Italian"
+    },
+    {
+        name: "Lasagna",
+        price: 6,
+        image: "./foods/fastFood/lasagna/lasagna1.jpg",
+        category: "Italian"
+    },
+    {
+        name: "Lasagna",
+        price: 7,
+        image: "./foods/fastFood/lasagna/lasagna2.jpg",
+        category: "Italian"
+    },
+    {
+        name: "Kebab",
+        price: 7,
+        image: "./foods/fastFood/kebab/kebab1.jpg",
+        category: "Arabic"
+    },
+    {
+        name: "Kebab",
+        price: 8,
+        image: "./foods/fastFood/kebab/kebab2.jpg",
+        category: "Arabic"
+    },
+    {
+        name: "Grilled Chicken",
+        price: 8,
+        image: "./foods/fastFood/grilledChicken/grilledChicken1.jpg",
+        category: "Arabic"
+    },
+    {
+        name: "Grilled Chicken",
+        price: 9,
+        image: "./foods/fastFood/grilledChicken/grilledChicken2.jpg",
+        category: "Arabic"
+    },
 ];
 
 export default products;
