@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         <div className='hidden sm:block'>
           <ul className='text-white flex items-center space-x-5 text-xl'>
-            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'  ><Link to="/">Home</Link></li>
+            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/">Home</Link></li>
             <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition flex items-center animate-pulse' ><Link to="/shopping"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
           </ul>
         </div>

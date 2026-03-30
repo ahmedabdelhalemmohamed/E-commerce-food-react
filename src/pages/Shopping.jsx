@@ -51,22 +51,27 @@ const Shopping = () => {
 
   return (
     <div className="mt-5">
-      <div className="text-center text-4xl font-bold text-green-500/60">
+      <div className="text-center text-4xl font-bold text-green-500/60 mb-5">
         <h1>Products</h1>
       </div>
 
-      <div className="flex  justify-between">
+      <div className="flex flex-wrap lg:flex-nowrap justify-between px-5 gap-5 md:px-10 border-1 border-green-500 py-5 m-5 mb-10">
 
         {colorChecked.map((item, index) => {
           return (
           
-            <div className="flex gap-2 items-center cursor-pointer"onClick={() => handleClickFiltered(index)}>
+            <div className="flex gap-2 items-center cursor-pointer mx-auto" onClick={() => handleClickFiltered(index)}>
               <div className={`w-5 h-5 rounded-full border ${item.state? "bg-green-500 border-green-700" : ""}`} />
               <p>{item.name}</p> 
             </div>
           )
           }
       )}
+      <form action="" className="mx-auto">
+        <select name="" id="">
+          <option value="2">2$</option>
+        </select>
+      </form>
       </div>
       
 
