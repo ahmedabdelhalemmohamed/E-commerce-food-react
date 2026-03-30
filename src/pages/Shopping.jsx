@@ -7,7 +7,7 @@ const Shopping = () => {
 
   const filtered = [
     {
-      name: "All",
+      "name": "All",
       "state": false
     }, 
     {
@@ -33,6 +33,7 @@ const Shopping = () => {
   ];
 
   const [colorChecked, setColorChecked] = useState(filtered);
+  const [category, setCategory] = useState("All");
 
   const handleClickFiltered = (i) => {
     const newFilteredColor = filtered.map((item, index) => {
@@ -44,6 +45,7 @@ const Shopping = () => {
     })
 
     setColorChecked(newFilteredColor);
+    setCategory(newFilteredColor[i].name);
   };
 
 
@@ -69,7 +71,7 @@ const Shopping = () => {
       
 
     {
-      <Products />
+      <Products category={category}/>
     }
       
     </div>
