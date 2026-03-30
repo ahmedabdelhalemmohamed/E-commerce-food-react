@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Products from "../components/Products";
 
 const Shopping = () => {
 
@@ -67,13 +68,9 @@ const Shopping = () => {
       </div>
       
 
-    {/* {
-    checked && (
-      <div>
-        <div className="w-10 h-10 border-2 boder-green-500"/>
-      </div>
-    )
-    } */}
+    {
+      <Products />
+    }
       
     </div>
   );
