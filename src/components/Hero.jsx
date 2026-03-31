@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
 
         <button className="md:mt-10 lg:mt-15 mt-5 py-3 px-6 bg-green-500 rounded-full text-black font-bold border-2 border-green-500 hover:bg-white hover:text-green-500 transition cursor-pointer w-fit z-60 animate-pulse">
-          <Link to="/foods">Discover Foods</Link>
+          <Link to="/shopping">Discover Foods</Link>
         </button>
       </div>
     </div>

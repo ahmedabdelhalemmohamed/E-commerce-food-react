@@ -71,7 +71,7 @@ const BestFoods = () => {
       </div>
 
       <button className="mx-auto mt-5 py-3 px-6 bg-white text-green-500 rounded-full hover:text-white font-bold border-2 border-green-500 hover:bg-green-500 hover:text-black transition cursor-pointer w-fit ">
-        <Link to="/foods">Discover More Foods</Link>
+        <Link to="/shopping">Discover More Foods</Link>
       </button>
       {product && (
         <div className="z-100 fixed top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-fit  bg-green-300 flex items-center rounded-2xl">

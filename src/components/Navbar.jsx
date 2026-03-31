@@ -19,7 +19,8 @@ const Navbar = () => {
         <div className='hidden sm:block'>
           <ul className='text-white flex items-center space-x-5 text-xl'>
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/">Home</Link></li>
-            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition flex items-center animate-pulse' ><Link to="/shopping"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
+            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/shopping">Store</Link></li>
+            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition flex items-center animate-pulse' ><Link to="/basket"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
           </ul>
         </div>
         <div className='text-green-600 border-2 rounded-full hover:bg-green-600 hover:text-white hover:border-white-600 p-1 sm:hidden'>
@@ -37,7 +38,8 @@ const Navbar = () => {
         <div className='sm:hidden bg-slate-700 text-center fixed  w-full animate-menu'>
           <ul className='text-white flex flex-col items-center p-5 justify-center space-y-5 text-xl '>
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><a href=""><Link to="/">Home</Link></a></li>
-            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition' onClick={() => setOpenMenu((prev) => !prev)}><a href="" className='flex items-center animate-pulse'><Link to="/shopping"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></a></li> 
+            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><a href=""><Link to="/shopping">Store</Link></a></li>
+            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition' onClick={() => setOpenMenu((prev) => !prev)}><a href="" className='flex items-center animate-pulse'><Link to="/basket"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></a></li> 
           </ul>
         </div>
         )
