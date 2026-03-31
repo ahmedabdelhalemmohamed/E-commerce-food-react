@@ -48,6 +48,8 @@ const Shopping = () => {
     setCategory(newFilteredColor[i].name);
   };
 
+  const prices = ["3$", "4$", "5$", "6$", "7$", "8$", "9$"];
+  const [price, setPrice] = useState("All");
 
   return (
     <div className="mt-5">
@@ -67,16 +69,21 @@ const Shopping = () => {
           )
           }
       )}
-      <form action="" className="mx-auto">
-        <select name="" id="">
-          <option value="2">2$</option>
-        </select>
-      </form>
+        <form action="" className="mx-auto">
+          <select onChange={(e) => setPrice(e.target.value)} className="border-2 border-green-500 rounded-lg py-2 px-5">
+            <option value="All">Select price</option>
+            {
+              prices.map((item, index) => {
+                return <option key={index} value={item}>{item}</option>
+              })
+            }
+          </select>
+        </form>
       </div>
       
 
     {
-      <Products category={category}/>
+      <Products category={category} price={price}/>
     }
       
     </div>
