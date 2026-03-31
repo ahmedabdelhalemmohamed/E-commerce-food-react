@@ -50,6 +50,7 @@ const Shopping = () => {
 
   const prices = ["3$", "4$", "5$", "6$", "7$", "8$", "9$"];
   const [price, setPrice] = useState("All");
+  const [product, setProduct] = useState(false);
 
   return (
     <div className="mt-5">
@@ -85,6 +86,8 @@ const Shopping = () => {
     {
       <Products category={category} price={price}/>
     }
+
+    
       
     </div>
   );
