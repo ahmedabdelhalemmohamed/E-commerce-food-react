@@ -6,25 +6,25 @@ const BestFoods = () => {
   const [famousFood, setFamousFood] = useState([
     {
       name: "Pizza Italian",
-      img: "./foods/pizza.jpg",
+      image: "./foods/pizza.jpg",
       des: "The best Italian pizza",
       price: "5$",
     },
     {
       name: "Pizza Italian",
-      img: "./foods/pizza.jpg",
+      image: "./foods/pizza.jpg",
       des: "The best Italian pizza",
       price: "5$",
     },
     {
       name: "Pizza Italian",
-      img: "./foods/pizza.jpg",
+      image: "./foods/pizza.jpg",
       des: "The best Italian pizza",
-      price: "5$",
+      price: "6$",
     },
   ]);
 
-  const [product, setProduct] = useState(false);
+  const [product, setProduct] = useState(null);
 
   return (
     <div className="mx-auto text-center overflow-hidden lg:px-50 px-10 mb-20">
@@ -43,7 +43,7 @@ const BestFoods = () => {
             >
               <div className="w-full h-50">
                 <img
-                  src={food.img}
+                  src={food.image}
                   alt=""
                   className="w-full h-full rounded-2xl"
                 />
@@ -53,14 +53,13 @@ const BestFoods = () => {
                   <h1 className="text-xl font-bold text-green-500">
                     {food.name}
                   </h1>
-                  <p className="font-medium">{food.des}</p>
                 </div>
                 <div className="bg-green-500 rounded-full w-10 mx-auto mt-2 text-white">
                   {food.price}
                 </div>
               </div>
               <button
-                onClick={() => setProduct(!product)}
+                onClick={() => setProduct(food)}
                 className="mt-5 py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit "
               >
                 Add to Cart
@@ -74,47 +73,45 @@ const BestFoods = () => {
         <Link to="/shopping">Discover More Foods</Link>
       </button>
       {product && (
-        <div className="z-100 fixed top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-fit  bg-green-300 flex items-center rounded-2xl">
-          <div
-            className={`w-75 h-auto border-r-2 border-green-500  p-5 space-y-2  transition-all`}
-          >
-            <div className="w-full h-50">
-              <img
-                src="./foods/pizza.jpg"
-                alt=""
-                className="w-full h-full rounded-2xl"
-              />
-            </div>
-            <div className="text-center">
-              <div>
-                <h1 className="text-xl font-bold text-green-500">
-                  Pizza Italian
-                </h1>
-                <p className="font-medium">The best Italian pizza</p>
-              </div>
-              <div className="bg-green-500 rounded-full w-10 mx-auto mt-2 text-white">
-                5$
-              </div>
-            </div>
-            <button
-              onClick={() => setProduct(!product)}
-              className="mt-5 py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit "
-            >
-              Add to Cart
-            </button>
-          </div>
-          <div className="p-2">
-            <div className="absolute top-3 right-3 cursor-pointer">
-              <IoIosClose size={30} onClick={() => setProduct((prev) => !prev)}/>
-            </div>
-            
-            <div>
-              <p className="font-bold mb-2">Amount:</p>
-              <input type="number" min={1} className="text-center border-2 border-white p-2 w-15 outline-none text-red-500 font-bold"/>
-            </div>
-          </div>
-        </div>
-      )}
+                  <div className="z-100 fixed top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-fit  bg-green-300 flex items-center rounded-2xl text-center">
+                    <div
+                      className={`w-75 h-auto border-r-2 border-green-500  p-5 space-y-2  transition-all`}
+                    >
+                      <div className="w-full h-50">
+                        <img
+                          src={product.image}
+                          alt=""
+                          className="w-full h-full rounded-2xl"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div>
+                          <h1 className="text-xl font-bold text-green-500">
+                            {product.name}
+                          </h1>
+                        </div>
+                        <div className="bg-green-500 rounded-full w-10 mx-auto mt-2 text-white">
+                          ${product.price}    
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => setProduct(!product)}
+                        className="mt-5  py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit "
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                    <div className="p-2">
+                      <div className="absolute top-3 right-3 cursor-pointer">
+                        <IoIosClose size={30} onClick={() => setProduct((prev) => !prev)}/>
+                      </div>
+                      
+                      <div>
+                        <p className="font-bold mb-2">Amount:</p>
+                        <input type="number" value={1} min={1} className="text-center border-2 border-white p-2 w-15 outline-none text-red-500 font-bold"/>
+                      </div>
+                    </div>
+                  </div>)}
     </div>
   );
 };
