@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { storeContext } from "../context/StoreContext";
 
 const Store = () => {
-  return (
-    <div>Store</div>
-  )
-}
 
-export default Store
+    const {selectedProducts} = useContext(storeContext);
+    console.log(selectedProducts);
+  return (
+    <>
+    
+    </>
+  );
+};
+
+export default Store;

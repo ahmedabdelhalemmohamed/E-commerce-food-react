@@ -37,9 +37,9 @@ const Navbar = () => {
       openMenu ? (
         <div className='sm:hidden bg-slate-700 text-center fixed  w-full animate-menu'>
           <ul className='text-white flex flex-col items-center p-5 justify-center space-y-5 text-xl '>
-            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><a href=""><Link to="/">Home</Link></a></li>
-            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><a href=""><Link to="/shopping">Store</Link></a></li>
-            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition' onClick={() => setOpenMenu((prev) => !prev)}><a href="" className='flex items-center animate-pulse'><Link to="/basket"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></a></li> 
+            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><Link to="/">Home</Link></li>
+            <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><Link to="/shopping">Store</Link></li>
+            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition' onClick={() => setOpenMenu((prev) => !prev)}><Link to="/basket" className='flex items-center animate-pulse'><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
           </ul>
         </div>
         )

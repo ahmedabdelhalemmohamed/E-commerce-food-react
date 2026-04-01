@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import products from '../js/Products'
 import { IoIosClose } from "react-icons/io";
+import { useContext } from 'react';
+import { storeContext } from '../context/StoreContext';
 
 
 const Products = ({category, price}) => {
 
+    const {setSelectedProducts} = useContext(storeContext);
+
     const [Products, setProducts] = useState(products);  
 
     const [product, setProduct] = useState(null);
-    console.log(product);
+    const [amount, setAmount] = useState(1);
 
   return (
     <div className='grid justify-between grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 px-5 md:px-8'>
@@ -78,7 +82,10 @@ const Products = ({category, price}) => {
                   </div>
                 </div>
                 <button
-                  onClick={() => setProduct(!product)}
+                  onClick={() => {
+                    setProduct(!product);
+                    setSelectedProducts((prev) => [...prev, product]);
+                }}
                   className="mt-5  py-3 px-6 bg-gradient-to-r from-green-500 to-green-300 hover:bg-gradient-to-l hover:from-green-500 hover:to-green-300 rounded-full text-white font-bold border-2 border-green-500 hover:bg-white hover:text-black transition cursor-pointer w-fit "
                 >
                   Add to Cart
@@ -91,7 +98,7 @@ const Products = ({category, price}) => {
                 
                 <div>
                   <p className="font-bold mb-2">Amount:</p>
-                  <input type="number" value={1} min={1} className="text-center border-2 border-white p-2 w-15 outline-none text-red-500 font-bold"/>
+                  <input type="number" value={amount} onChange={((e) => setAmount(e.target.value))} min={1} className="text-center border-2 border-white p-2 w-15 outline-none text-red-500 font-bold"/>
                 </div>
               </div>
             </div>)}
