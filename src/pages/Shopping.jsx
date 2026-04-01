@@ -34,6 +34,8 @@ const Shopping = () => {
 
   const [colorChecked, setColorChecked] = useState(filtered);
   const [category, setCategory] = useState("All");
+  const prices = ["3$", "4$", "5$", "6$", "7$", "8$", "9$"];
+  const [price, setPrice] = useState("All");
 
   const handleClickFiltered = (i) => {
     const newFilteredColor = filtered.map((item, index) => {
@@ -48,9 +50,6 @@ const Shopping = () => {
     setCategory(newFilteredColor[i].name);
   };
 
-  const prices = ["3$", "4$", "5$", "6$", "7$", "8$", "9$"];
-  const [price, setPrice] = useState("All");
-  const [product, setProduct] = useState(false);
 
   return (
     <div className="mt-5">
