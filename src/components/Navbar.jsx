@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { storeContext } from '../context/StoreContext';
 
 const Navbar = () => {
 
   const [openMenu, setOpenMenu] = useState(false);
+  const {selectedProducts} = useContext(storeContext);
 
   return (
     <div >
@@ -21,7 +23,7 @@ const Navbar = () => {
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/">Home</Link></li>
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/shopping">Store</Link></li>
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/dashboard">Dashboard</Link></li>
-            <li className={`bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition flex items-center animate-pulse` }><Link to="/basket"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
+            <li data-count={selectedProducts.length} className={`bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition flex items-center animate-pulse  ${selectedProducts.length > 0 ? "relative before:absolute before:content-[attr(data-count)] before:w-5 before:h-5 before:flex before:justify-center before:items-center  before:rounded-full before:bg-red-400 before:-left-2 before:-top-2 before:p-1 before:text-xs" : ""} ` }><Link to="/basket"><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
           </ul>
         </div>
         <div className='text-green-600 border-2 rounded-full hover:bg-green-600 hover:text-white hover:border-white-600 p-1 sm:hidden'>
@@ -41,7 +43,7 @@ const Navbar = () => {
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><Link to="/">Home</Link></li>
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition' onClick={() => setOpenMenu((prev) => !prev)}><Link to="/shopping">Store</Link></li>
             <li className='bg-green-500 py-2 px-4 rounded-full border-2 border-green-500 hover:bg-white hover:text-green-600 transition'><Link to="/dashboard">Dashboard</Link></li>
-            <li className='bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition' onClick={() => setOpenMenu((prev) => !prev)}><Link to="/basket" className='flex items-center animate-pulse'><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
+            <li data-count={selectedProducts.length} className={`bg-green-500 border-2 border-green-500 rounded-full p-2 hover:bg-white  transition flex items-center animate-pulse  ${selectedProducts.length > 0 ? "relative before:absolute before:content-[attr(data-count)] before:w-5 before:h-5 before:flex before:justify-center before:items-center  before:rounded-full before:bg-red-400 before:-left-2 before:-top-2 before:p-1 before:text-xs" : ""} ` } onClick={() => setOpenMenu((prev) => !prev)}><Link to="/basket" className={`flex items-center animate-pulse`}><FaShoppingCart className="text-2xl text-white hover:text-green-500 transition"/></Link></li> 
           </ul>
         </div>
         )
