@@ -26,7 +26,7 @@ const Store = () => {
                 selectedProducts.map((item, index) => {
 
                    return  <div key={index} className="flex flex-col items-center gap-2  p-5 rounded-lg bg-gradient-to-r from-green-500/50 to-green-700">
-                        <img src={item.image} alt={item.name} className="w-40 h-40 object-cover rounded-lg" />
+                        <img loading="lazy"  src={item.image} alt={item.name} className="w-40 h-40 object-cover rounded-lg" />
                         <div className='flex flex-col sm:flex-row text-center justify-between items-center sm:space-x-5'>
                             <h2 className="text-sm font-bold text-white">{item.name}</h2>
                             <p className="text-white font-bold text-sm">{item.price}</p>

@@ -23,6 +23,7 @@ const Products = ({ category, price }) => {
             className={`relative ${item.discount ? "before:absolute before:content-['discount'] before:-left-[-10px] before:-top-[10px] before:bg-slate-500 before:p-3 before:rounded-full before:text-white before:animate-pulse" : ""} flex flex-col items-center gap-2  p-5 rounded-lg bg-gradient-to-r from-green-500/50 to-green-700`}
           >
             <img
+                loading="lazy" 
               src={item.image}
               alt={item.name}
               className="w-40 h-40 object-cover rounded-lg"
@@ -45,6 +46,7 @@ const Products = ({ category, price }) => {
           >
             {" "}
             <img
+                loading="lazy" 
               src={item.image}
               alt={item.name}
               className="w-40 h-40 object-cover rounded-lg"
@@ -67,6 +69,7 @@ const Products = ({ category, price }) => {
           >
             {" "}
             <img
+                loading="lazy" 
               src={item.image}
               alt={item.name}
               className="w-40 h-40 object-cover rounded-lg"
@@ -89,6 +92,7 @@ const Products = ({ category, price }) => {
           >
             {" "}
             <img
+                loading="lazy" 
               src={item.image}
               alt={item.name}
               className="w-40 h-40 object-cover rounded-lg"
@@ -114,6 +118,7 @@ const Products = ({ category, price }) => {
           >
             <div className="w-full h-50">
               <img
+                loading="lazy" 
                 src={product.image}
                 alt=""
                 className="w-full h-full rounded-2xl"
@@ -137,7 +142,7 @@ const Products = ({ category, price }) => {
                     </span>
                   </div>
                 ) : (
-                  <div>{product.price}$</div>
+                  <div>{product.price * amount}$</div>
                 )}
               </div>
             </div>
@@ -152,9 +157,9 @@ const Products = ({ category, price }) => {
                       ? (product.price -
                           ((product.price * product.discount) / 100).toFixed(
                             0,
-                          )) *
-                        amount
-                      : product.price,
+                          )) *  
+                        amount + "$"
+                      : product.price * amount + "$",
                     amount: amount,
                   },
                 ]);

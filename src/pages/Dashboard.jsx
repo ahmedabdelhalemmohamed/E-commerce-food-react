@@ -4,6 +4,7 @@ import { storeContext } from '../context/StoreContext'
 const Dashboard = () => {
 
     const {selectedProducts} = useContext(storeContext)
+    console.log(selectedProducts);
 
   return (
     <div className='grid grid-cols-1  lg:grid-cols-3'>
@@ -13,7 +14,7 @@ const Dashboard = () => {
             </div>
             <div className='text-2xl flex justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
                 <p>product buy: {selectedProducts.length}</p>
-                <p>total price: {selectedProducts.reduce((total, product) => total + product.price, 0)}$</p>
+                <p>total price: {selectedProducts.reduce((total, product) => total + parseInt(product.price), 0)}$</p>
             </div>
         </div>
 
@@ -23,7 +24,7 @@ const Dashboard = () => {
             </div>
             <div className='text-2xl flex justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
                 <p>product buy: {selectedProducts.length}</p>
-                <p>total price: {selectedProducts.reduce((total, product) => total + product.price, 0)}$</p>
+                <p>total price: {selectedProducts.reduce((total, product) => total + parseInt(product.price), 0)}$</p>
             </div>
         </div>
 
@@ -33,7 +34,7 @@ const Dashboard = () => {
             </div>
             <div className='text-2xl flex justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
                 <p>product buy: {selectedProducts.length}</p>
-                <p>total price: {selectedProducts.reduce((total, product) => total + product.price, 0)}$</p>
+                <p>total price: {selectedProducts.reduce((total, product) => total + parseInt(product.price), 0)}$</p>
             </div>
         </div>
     </div>

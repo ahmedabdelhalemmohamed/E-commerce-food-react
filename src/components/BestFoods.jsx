@@ -48,7 +48,8 @@ const BestFoods = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-full h-50">
-                <img
+                <img 
+                loading="lazy" 
                   src={food.image}
                   alt=""
                   className="w-full h-full rounded-2xl"
@@ -88,7 +89,8 @@ const BestFoods = () => {
                   className={`w-75 h-auto border-r-2 border-green-500  p-5 space-y-2  transition-all`}
                 >
                   <div className="w-full h-50">
-                    <img
+                    <img 
+                    loading="lazy" 
                       src={product.image}
                       alt=""
                       className="w-full h-full rounded-2xl"
@@ -112,7 +114,7 @@ const BestFoods = () => {
                           </span>
                         </div>
                       ) : (
-                        <div>{product.price}$</div>
+                        <div>{product.price * amount}$</div>
                       )}
                     </div>
                   </div>
@@ -128,8 +130,8 @@ const BestFoods = () => {
                                 ((product.price * product.discount) / 100).toFixed(
                                   0,
                                 )) *
-                              amount
-                            : product.price,
+                              amount + "$"
+                            : product.price * amount + "$",
                           amount: amount,
                         },
                       ]);
