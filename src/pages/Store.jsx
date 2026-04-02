@@ -11,6 +11,8 @@ const Store = () => {
         setSelectedProducts(newProducts);
     }
 
+
+
   return (
     <div className="text-center mt-10 font-bold text-2xl text-green-500/60">
         <div>

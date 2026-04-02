@@ -5,6 +5,7 @@ import Shopping from './pages/Shopping'
 import supabase from './supabase'
 import Navbar from './components/Navbar'
 import Store from './pages/Store'
+import Dashboard from './pages/Dashboard'
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Home />}/>
         <Route path="/shopping" element={<Shopping />}/>
         <Route path="/basket" element={<Store />}/>
+        <Route path="/dashboard" element={<Dashboard />}/>
       </Routes>
     </div>
   )
