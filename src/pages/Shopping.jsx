@@ -72,6 +72,7 @@ const Shopping = () => {
         <form action="" className="mx-auto">
           <select onChange={(e) => setPrice(e.target.value)} className="border-2 border-green-500 rounded-lg py-2 px-5">
             <option value="All">Select price</option>
+            <option value="All">All</option>
             {
               prices.map((item, index) => {
                 return <option key={index} value={item}>{item}</option>
