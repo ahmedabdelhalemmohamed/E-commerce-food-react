@@ -20,7 +20,7 @@ const Products = ({ category, price }) => {
         return category === "All" && price === "All" ? (
           <div
             key={index}
-            className={`relative ${item.discount ? "before:absolute before:content-['discount'] before:-left-[-10px] before:-top-[10px] before:bg-slate-500 before:p-3 before:rounded-full before:text-white" : ""} flex flex-col items-center gap-2  p-5 rounded-lg bg-gradient-to-r from-green-500/50 to-green-700`}
+            className={`relative ${item.discount ? "before:absolute before:content-['discount'] before:-left-[-10px] before:-top-[10px] before:bg-slate-500 before:p-3 before:rounded-full before:text-white before:animate-pulse" : ""} flex flex-col items-center gap-2  p-5 rounded-lg bg-gradient-to-r from-green-500/50 to-green-700`}
           >
             <img
               src={item.image}
