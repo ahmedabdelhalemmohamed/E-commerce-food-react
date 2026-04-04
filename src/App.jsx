@@ -2,14 +2,12 @@ import React from 'react'
 import Home from './pages/Home'
 import { Router, Route, Routes } from 'react-router-dom'
 import Shopping from './pages/Shopping'
-import supabase from './supabase'
 import Navbar from './components/Navbar'
 import Store from './pages/Store'
 import Dashboard from './pages/Dashboard'
 
 const App = () => {
 
-  console.log(supabase)
 
   return (
     <div className='min-h-screen'>
