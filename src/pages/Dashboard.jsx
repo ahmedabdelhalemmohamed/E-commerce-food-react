@@ -12,7 +12,7 @@ const Dashboard = () => {
             <div className='text-center font-bold text-4xl text-green-400'>
                 <h1>Today:</h1>
             </div>
-            <div className='text-2xl flex justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
+            <div className='text-2xl flex flex-col sm:flex-row text-center justify-center  space-y-3 sm:space-y-0 sm:justify-between  sm:flex-nowrap'>
                 <p>product buy: {selectedProducts.length}</p>
                 <p>total price: {selectedProducts.reduce((total, product) => total + parseInt(product.price), 0)}$</p>
             </div>
@@ -22,7 +22,7 @@ const Dashboard = () => {
             <div className='text-center font-bold text-4xl text-green-400'>
                 <h1>weekly:</h1>
             </div>
-            <div className='text-2xl flex justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
+            <div className='text-2xl flex flex-col sm:flex-row text-center justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
                 <p>product buy: {selectedProducts.length}</p>
                 <p>total price: {selectedProducts.reduce((total, product) => total + parseInt(product.price), 0)}$</p>
             </div>
@@ -32,7 +32,7 @@ const Dashboard = () => {
             <div className='text-center font-bold text-4xl text-green-400'>
                 <h1>monthy:</h1>
             </div>
-            <div className='text-2xl flex justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
+            <div className='text-2xl flex flex-col sm:flex-row text-center justify-center  space-y-3 sm:space-y-0 sm:justify-between flex-wrap sm:flex-nowrap'>
                 <p>product buy: {selectedProducts.length}</p>
                 <p>total price: {selectedProducts.reduce((total, product) => total + parseInt(product.price), 0)}$</p>
             </div>
