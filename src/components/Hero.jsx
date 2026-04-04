@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className='bg-[url("./hero2.png")] bg-cover h-[60vh] sm:h-[50vh] lg:h-[90vh] relative'>
+    <div className='bg-[url("/hero2.png")] bg-cover h-[60vh] sm:h-[50vh] lg:h-[90vh] relative'>
       <div className="absolute left-0 top-0 bg-green-500/30 z-40 w-full h-full" />
       <div className="text-white flex flex-col py-15 px-10 lg:px-30 items-center text-center sm:items-start sm:text-start sm:py-50">
         <div className="lg:max-w-4xl md:max-w-xl space-y-5">
